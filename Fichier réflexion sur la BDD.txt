@@ -26,3 +26,23 @@ Videos:
 	Audience:
 		% durée visionnage des non abo
 		% durée visionnage des abo
+
+Source:
+	la source:
+		Pages de chaîne
+		Autres Fonctionnalités Youtube
+		Source Directe ou inconnue
+		Recherche Youtube
+		Suggestions de vidéos
+		Fonctionnalités de navigation
+		Externe/inconnue - lecteur intégré/Application externe
+		Recherche Google
+		Notifications
+		Page de playlist
+		Playlists
+		Pas de source
+	Descriptions:
+Auteurs:
+	Mathieu
+	Quentin
+	Raphaël
