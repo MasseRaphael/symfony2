@@ -1,0 +1,28 @@
+table: 
+Videos:
+	infos général:
+		id_videos
+		auteurs
+		date de sortie
+	engagement:
+		durée de visionnage(heures)
+		abonnée grace
+		durée moyenne de visio
+		gain d'abo
+		% moyen de visio
+		% reste après 30 s
+		pic à (en temps)
+		% finissent
+	couverture:
+		total de vue
+		nb impressions
+		taux de clics en %
+		source 1
+		source 2
+		source 3
+		% source 1
+		% source 2
+		% source 3
+	Audience:
+		% durée visionnage des non abo
+		% durée visionnage des abo
