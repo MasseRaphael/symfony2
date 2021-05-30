@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello VideoController!{% endblock %}
+{% block title %}Vidéos{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,13 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Raphaël/Documents/GitHub/symfony2/src/Controller/VideoController.php'|file_link(0) }}">src/Controller/VideoController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Raphaël/Documents/GitHub/symfony2/templates/video/index.html.twig'|file_link(0) }}">templates/video/index.html.twig</a></code></li>
-    </ul>
+    <h1>Liste des vidéos Enregistrées</h1>
+    <a href='video/add'>Ajouter une vidéo</a><br><br>
+    {% for video in videos %}
+        <h2>{{ video.title }}</h2>
+        <a href='#'>Voir plus</a>
+        <a href='#'>Supprimer</a>
+    {% endfor %}
+    
 </div>
 {% endblock %}

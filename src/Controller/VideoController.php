@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Video;
 use App\Form\StatVideoFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,14 +16,16 @@ class VideoController extends AbstractController
      */
     public function index(): Response
     {
+        $video = $this->getDoctrine()->getRepository(Video::class)->findAll();
+
         return $this->render('video/index.html.twig', [
-            'controller_name' => 'VideoController',
+            'videos' => $video,
         ]);
     }
     /**
      * @Route("/video/add", name="video_add")
      */
-    public function video_add()
+    public function video_add(Request $request)
     {
         $video = new Video();
 
