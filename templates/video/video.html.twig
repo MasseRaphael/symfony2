@@ -29,7 +29,8 @@
     {{ video.percentdurationviewnofollow }}% de la durée visionné ne sont pas abonnés<br>
     {{ video.percentdurationviewfollow }}% de la durée visionné sont abonnés<br>
 
-    <a href='#'>Modifier</a>
+    <a href="{{ path('video_edit', {'id': video.id}) }}">Modifier</a>
+    <a href="{{ path('video') }}">Retour à la liste</a>
     
 </div>
 {% endblock %}

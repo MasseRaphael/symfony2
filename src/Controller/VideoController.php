@@ -54,4 +54,37 @@ class VideoController extends AbstractController
             'video' => $video,
         ]);
     }
+    /**
+     * @Route("/video/{id}/edit", name="video_edit", methods={"GET","POST"})
+     */
+    public function video_edit(Request $request, Video $video): Response
+    {
+        $form = $this->createForm(StatVideoFormType::class, $video);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('video');
+        }
+
+        return $this->render('video/edit.html.twig', [
+            'video' => $video,
+            'videoForm' => $form->createView(),
+        ]);
+    }
+    /**
+     * @Route("/video/{id}", name="video_delete", methods={"DELETE"})
+     */
+    public function video_delete(Request $request, Video $video): Response
+    {
+
+        if ($this->isCsrfTokenValid('delete'.$video->getId(), $request->request->get('_token'))) {
+            $doctrine = $this->getDoctrine()->getManager();
+            $doctrine->remove($video);
+            $doctrine->flush();
+        }
+
+        return $this->redirectToRoute('video');
+    }
 }
