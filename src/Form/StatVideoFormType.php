@@ -2,7 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\Author;
+use App\Entity\Source;
 use App\Entity\Video;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -21,7 +24,10 @@ class StatVideoFormType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Titre'
             ])
-            ->add('author')
+            ->add('author', EntityType::class,[
+                'class' => Author::class,
+                'label' => 'Auteur'
+            ])
             ->add('date_release', DateType::class , [
                 'label' => 'Date de sortie'
             ])
@@ -55,9 +61,18 @@ class StatVideoFormType extends AbstractType
             ->add('percent_click', TextType::class, [
                 'label' => 'Taux de clics en Pourcentage'
             ])
-            ->add('sorce_1')
-            ->add('sorce_2')
-            ->add('sorce_3')
+            ->add('sorce_1', EntityType::class,[
+                'class' => Source::class,
+                'label' => 'Source 1'
+            ])
+            ->add('sorce_2', EntityType::class,[
+                'class' => Source::class,
+                'label' => 'Source 2'
+            ])
+            ->add('sorce_3', EntityType::class,[
+                'class' => Source::class,
+                'label' => 'Source 3'
+            ])
             ->add('percent_sorce_1', TextType::class, [
                 'label' => 'Pourcentage de la source 1'
             ])
