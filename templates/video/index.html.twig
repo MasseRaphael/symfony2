@@ -13,6 +13,7 @@
     <a href='video/add'>Ajouter une vidéo</a><br><br>
     {% for video in videos %}
         <h2>{{ video.title }}</h2>
+        <p> Par {{ video.author }}, {{ video.totalview }} vue</p>
         <a href='#'>Voir plus</a>
         <a href='#'>Supprimer</a>
     {% endfor %}

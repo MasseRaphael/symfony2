@@ -31,6 +31,14 @@ class VideoController extends AbstractController
 
         $form = $this->createForm(StatVideoFormType::class, $video);
 
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $doctrine = $this->getDoctrine()->getManager();
+            $doctrine->persist($video);
+            $doctrine->flush();
+        }
+
         return $this->render('video/form.html.twig', [
             'videoForm' => $form->createView(),
         ]);
