@@ -2,13 +2,13 @@ table:
 Videos:
 	infos général:
 		id_videos
+		titre de la video
 		auteurs
 		date de sortie
 	engagement:
 		durée de visionnage(heures)
 		abonnée grace
 		durée moyenne de visio
-		gain d'abo
 		% moyen de visio
 		% reste après 30 s
 		pic à (en temps)
@@ -46,3 +46,4 @@ Auteurs:
 	Mathieu
 	Quentin
 	Raphaël
+	Ensemble

@@ -108,25 +108,25 @@ class Video
     private $percent_duration_view_follow;
 
     /**
-     * @ORM\ManyToOne(targetEntity=author::class, inversedBy="videos")
+     * @ORM\ManyToOne(targetEntity=Author::class, inversedBy="videos")
      * @ORM\JoinColumn(nullable=false)
      */
     private $author;
 
     /**
-     * @ORM\ManyToOne(targetEntity=source::class)
+     * @ORM\ManyToOne(targetEntity=Source::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $sorce_1;
 
     /**
-     * @ORM\ManyToOne(targetEntity=source::class)
+     * @ORM\ManyToOne(targetEntity=Source::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $sorce_2;
 
     /**
-     * @ORM\ManyToOne(targetEntity=source::class)
+     * @ORM\ManyToOne(targetEntity=Source::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $sorce_3;
