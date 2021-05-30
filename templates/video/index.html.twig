@@ -14,7 +14,7 @@
     {% for video in videos %}
         <h2>{{ video.title }}</h2>
         <p> Par {{ video.author }}, {{ video.totalview }} vue</p>
-        <a href='#'>Voir plus</a>
+        <a href="{{ path('video_show', {"id": video.id}) }}">Voir plus</a>
         <a href='#'>Supprimer</a>
     {% endfor %}
     

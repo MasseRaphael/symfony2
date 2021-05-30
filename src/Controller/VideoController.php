@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class VideoController extends AbstractController
 {
     /**
-     * @Route("/video", name="video")
+     * @Route("/video", name="video", methods={"GET"})
      */
     public function index(): Response
     {
@@ -23,9 +23,9 @@ class VideoController extends AbstractController
         ]);
     }
     /**
-     * @Route("/video/add", name="video_add")
+     * @Route("/video/add", name="video_add", methods={"GET","POST"})
      */
-    public function video_add(Request $request)
+    public function video_add(Request $request): Response
     {
         $video = new Video();
 
@@ -37,10 +37,21 @@ class VideoController extends AbstractController
             $doctrine = $this->getDoctrine()->getManager();
             $doctrine->persist($video);
             $doctrine->flush();
+            return $this->redirectToRoute('video');
         }
 
         return $this->render('video/form.html.twig', [
             'videoForm' => $form->createView(),
+        ]);
+    }
+    /**
+     * @Route("/video/{id}", name="video_show", methods={"GET"})
+     */
+    public function video_show(Video $video): Response
+    {
+
+        return $this->render('video/video.html.twig', [
+            'video' => $video,
         ]);
     }
 }
